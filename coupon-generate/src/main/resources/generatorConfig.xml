@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<!-- mybatis-generator:generate -->
+<generatorConfiguration>
+	<context id="context1" targetRuntime="MyBatis3">
+
+		<property name="beginningDelimiter" value="`" />
+		<property name="endingDelimiter" value="`" />
+		<property name="autoDelimitKeywords" value="true" />
+
+		<plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+		<plugin type="org.mybatis.generator.plugins.RowBoundsPlugin" />
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+
+
+		<commentGenerator>
+			<property name="suppressAllComments" value="false" />
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql:///coupon?characterEncoding=utf8"
+			userId="root" password="994397" />
+		<!-- 生成模型的包名和位置 -->
+		<javaModelGenerator targetPackage="com.github.coupon.entity"
+			targetProject="src/main/java" />
+
+		<!-- 生成映射文件的包名和位置 -->
+		<sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<!-- 生成DAO的包名和位置 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.github.coupon.dao" targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+
+		<!-- 此处为demo -->
+		
+		<table tableName="send_coupon_task">
+		</table>
+		<!--<table tableName="bus_info"> <generatedKey column="id" sqlStatement="MySql" 
+			identity="true"/> </table> <table tableName="bus_line"> <generatedKey column="id" 
+			sqlStatement="MySql" identity="true"/> </table> <table tableName="city"> 
+			<generatedKey column="id" sqlStatement="MySql" identity="true"/> </table> 
+			<table tableName="company"> <generatedKey column="id" sqlStatement="MySql" 
+			identity="true"/> </table> <table tableName="company_bus_line"> <generatedKey 
+			column="id" sqlStatement="MySql" identity="true"/> </table> -->
+
+	</context>
+</generatorConfiguration>  

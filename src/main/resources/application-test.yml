@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///coupon
+    password: pass
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+
